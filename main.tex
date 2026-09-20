@@ -12,34 +12,53 @@
 \newcommand{\CourseName}{Computational Microeconomics}
 \newcommand{\CourseSession}{Autumn 2026 Session 1}
 \newcommand{\Instructor}{Luyao Zhang}
-\newcommand{\WorkshopSession}{[Your assigned workshop session]}
+\newcommand{\WorkshopSession}{Session F}
 % Replace these with YOUR fork/project URLs, not the instructor's template.
-\newcommand{\GitHubLink}{[Your project GitHub URL]}
+\newcommand{\GitHubLink}{\url{https://github.com/yw650/Recommendation-Algorithms}}
 \newcommand{\TemplateRepository}{\url{https://github.com/sunshineluyao/ps1-overleaf-template}}
-\newcommand{\ColabLink}{[Insert verified Colab URL]}
-\newcommand{\DemoLink}{[Insert verified Hugging Face Space URL]}
+\newcommand{\ColabLink}{\url{https://colab.research.google.com/drive/1mYoomco3ywsZb8PaX2oh-wjGZkXDkRil?usp=sharing}}
+\newcommand{\DemoLink}{\url{https://huggingface.co/spaces/dku-comsci-econ206-2026/Recommendation_Algorithms}}
 \newcommand{\coursemeta}{\noindent\textbf{Submission to:} \CourseNumber{} --- \CourseName.\\
 \textbf{Course session:} \CourseSession. \textbf{Workshop:} \WorkshopSession.\\
 \textbf{Instructor:} \Instructor. \textbf{Assignment:} PS1 research proposal.\par\smallskip}
-\title{[A Specific, Researchable Proposal Title]}
-\author{[Your Full Name]}
+\title{How to Make Applications’ Recommendation Algorithms Benefit Users}
+\author{Yongzhuo Wu}
 \affiliation{\institution{Duke Kunshan University}\city{Kunshan}\country{China}}
-\email{[Your university email]}
-\renewcommand{\shortauthors}{[Your name]}
+\email{yw650@duke.edu}
+\renewcommand{\shortauthors}{Yongzhuo Wu}
 
 \begin{document}
 \begin{teaserfigure}
-\captionsetup{skip=8pt}
+\captionsetup{skip=4pt}
 \centering
 \includegraphics[width=\textwidth]{figures/ps1_teaser.pdf}
-\caption{Prospective research design adapted from the class proposal. Economic stochastic choice~\cite{rogers2009}, recursive LLM reasoning~\cite{zhang2025}, human reasoning levels~\cite{camerer2004} and persona audits~\cite{gupta2024} motivate a shared evaluation~\cite{jia2025}. Solid arrows within scenes show conceptual relations; dashed arrows show proposed synthesis. Estimated depth and precision are model-dependent, not direct observations of cognition.}
-\Description{Three disciplinary scenes contain a symbolic payoff matrix, successive belief levels, and a comparison of abstract personas. Dashed paths converge on a proposed evaluation of reasoning depth, decision precision and contextual sensitivity. All objects and text are editable in Draw.io.}
+\caption{The relationship between applications’ strategies, recommendation algorithms, and users’ choice.}
+\Description{The relationship between applications’ strategies, recommendation algorithms, and users’ choice.}
 \label{fig:teaser}
 \end{teaserfigure}
 \maketitle\raggedbottom\coursemeta
 
-\noindent\textcolor{CourseTeal}{\textbf{Template and illustrative figure.}} Adapt this class-example diagram and replace prompts with your own proposal. Fork the class repository and import your fork into Overleaf; see README for steps. Keep five numbered sections within two main pages, including metadata, Figure 1, its caption, and artifact links. Author Notes, references, and appendices follow on separate pages.
-
+% Compact spacing applies only to the five main proposal sections.
+% Preserve the template's font sizes, column widths, margins, and heading styles.
+\begingroup
+\linespread{0.96}\selectfont
+\setlength{\intextsep}{6pt plus 1pt minus 1pt}
+\setlength{\textfloatsep}{8pt plus 1pt minus 1pt}
+\captionsetup[table]{skip=4pt}
+\makeatletter
+\renewcommand\section{\def\@toclevel{1}%
+  \@startsection{section}{1}{\z@}%
+  {-.5\baselineskip \@plus -1\p@ \@minus -.2\p@}%
+  {.15\baselineskip}%
+  {\ACM@NRadjust\@secfont}}
+\renewcommand\subsection{\def\@toclevel{2}%
+  \@startsection{subsection}{2}{\z@}%
+  {-.5\baselineskip \@plus -1\p@ \@minus -.2\p@}%
+  {.15\baselineskip}%
+  {\ACM@NRadjust\@subsecfont}}
+\makeatother
 \input{sections/proposal}
+\clearpage
+\endgroup
 \input{appendices/supporting}
 \end{document}
