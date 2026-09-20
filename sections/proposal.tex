@@ -1,50 +1,58 @@
 \section{Three connected research questions}
-Start from Intellectual Statement II. State the background, motivation, application, affected stakeholders, and strategic tension. Explain your proposal's relationship to a Nobel-recognized foundation and current research.
+In this era, mobile phones have taken a large amount of time from us. Applications on the mobile phones are competing for users’ attention and time. To achieve this purpose, applications sometimes adopt addictive recommendation algorithms, which is harmful for users’ mental health.
 
-\textbf{Q1---Economics:} [Which incentive, welfare, allocation, or institutional question needs an answer?]\par
-\textbf{Q2---Computation:} [Which model, algorithm, or evaluation makes the answer checkable?]\par
-\textbf{Q3---Behavior:} [Which belief, preference, reasoning limit, or learning mechanism could alter the prediction?]
+Jean Tirole was awarded the Nobel Prize in 2014 for his analysis on how regulators make rules to make large companies benefit their users \cite{nobel2014}. When it comes to applications’ recommendation algorithms, regulators can also influence applications, driving applications to adopt recommendation algorithms that are healthier for the user.
 
-Explain why the answers depend on one another. Cite relevant economics, computer-science, and behavioral-science papers. Refer to Figure~\ref{fig:teaser} and explain how its mechanism connects your questions.
+\textbf{Q1—Economics:} How do external rewards from regulators shape applications’ recommendation algorithms?\par
+\textbf{Q2—Computation:} How to evaluate whether a recommendation is healthy or harmful?\par
+\textbf{Q3—Behavior:} Under what circumstances will the user choose to use applications that adopt healthier recommendation algorithms?\par
 
-\section{Answer to Q1: incentives and intellectual lineage}
-State a provisional answer or falsifiable hypothesis. Define players, actions versus strategies, payoffs, timing, and information. Name the solution concept and cite its defining paper, such as Nash~\cite{nash1950} or Bayesian equilibrium~\cite{harsanyi1968}. State what the benchmark establishes and what it leaves unresolved. Distinguish hypothetical, observed, estimated, and inherited quantities.
+The three questions focus on applications’ recommendation algorithms. The goal is to make applications provide healthier algorithms for users. To achieve this goal, as the teaser figure shows, we need to firstly define what a healthy algorithm is (Question 2). Many studies focus on how to make recommendation algorithms that keep users using \cite{zou2019}. Conversely, we want to make applications willing to adopt healthy recommendation algorithms by designing an external reward (Question 1). Allcott et al.~\cite{allcott2022} claim that people do not intentionally spend so much time on mobile phones \cite{wu2026}. This indicates mobile phone usage behaviors sometimes diverge from users’ rational intentions. The goal of making applications provide healthier algorithms for users cannot be achieved unless users intentionally choose to use those applications that adopt healthier recommendation algorithms (Question 3).
 
-\section{Answer to Q2: method and evaluation}
-Explain the computational part of Figure~\ref{fig:teaser}: inputs, algorithm, baseline, metric, and a meaningful mathematical or computational check. Specify your smallest feasible experiment and one modification to the baseline. State the actual outputs obtained; label every untested outcome as expected or planned. Your Colab notebook and interactive game must explain the same research question and identify any differences in model or scope.
+\section{Answer to Q1:}
+My hypothesis is applications will adopt healthier recommendation algorithms if the reward for healthy algorithms is big enough. Players in this model are two applications that aim to attract users’ attention and time. Each player chooses to cooperate (C) by adopting healthy algorithms or chooses to defect (D) by adopting addictive algorithms. The regulator will award the application who chooses to cooperate a reward r. The hypothetical payoff is (3+r, 3+r) for CC, (4, 1+r) for DC, (1+r, 4) for CD, and (2, 2) for DD. In this case, (a, b) means application A’s payoff is a and application B’s payoff is b; CD means application A chooses to cooperate and application B chooses to defect.
 
-\clearpage\balance
-\section{Answer to Q3: behavior and competing explanations}
-Identify a behavioral mechanism and a competing explanation. Describe evidence that would discriminate between them. Explain how this changes the economic model or computational design. State the limits of what the planned evidence can identify. Synthetic or simulated results do not establish human or real AI behavior. Include a feasible next test and what finding would change your mind.
+My solution concept is Nash equilibrium \cite{nash1950}. When the reward from the regulator is big enough, both applications will tend to choose to cooperate by adopting healthier recommendation algorithms, no matter what their competitor’s choice is. In this case, when r is larger than 1, both applications will tend to choose cooperation no matter what their competitor’s choice is, since choosing cooperation brings a bigger payoff.
 
+\section{Answer to Q2:}
+In this proposal, “healthy recommendation algorithm” is a recommendation algorithm that makes users feel that they have benefited from the recommended content instead of feeling regretful for interacting with the recommended content. As the teaser figure shows, to evaluate whether a recommendation algorithm is healthy or unhealthy, users are asked to rate recommended content. Based on users’ feedback on whether they benefit from the content or regret watching the content, the applications’ recommendation algorithms are labeled as “healthy” or “unhealthy”. As a preliminary design: If the number of users who benefit from the recommended content is more than the number of users who regret interacting with the recommended content, the corresponding recommendation algorithm is labeled as “healthy”. Otherwise, the corresponding recommendation algorithm is labeled as “unhealthy”.
+
+
+\balance
+\section{Answer to Q3:}
+One explanation is the user will choose to use the application that adopts a healthy recommendation algorithm as long as the user knows which application adopts the healthy algorithm. The competing explanation is the user will choose to use the application that provides content that attracts the user, no matter whether its recommendation algorithm is healthy. In the proposed experiment, two applications are shown for the users to choose from. One application adopts a healthy recommendation algorithm, while the other adopts an unhealthy recommendation algorithm. Users are told which application adopts a healthy algorithm before they select an application. After the users make their choice, they will be asked about the reason for their choice. If users report that their choice is based on whether the application adopts a healthy recommendation algorithm, then it provides preliminary evidence for the explanation “the user will choose to use the application that adopts a healthy recommendation algorithm as long as the user knows which application adopts the healthy algorithm”. However, self-reported results alone are not solid enough to claim which explanation holds.
 
 \section{Advanced development and future directions}
-Build on a named Nobel laureate's defining work and cite the award record. Identify an enduring human question---such as cooperation, fairness, trust or collective choice---and explain what the foundation establishes. Add a relevant Turing Award foundation where it clarifies the computational lineage.
-
-Explain what is distinctive about today's environment and technology, what current research leaves unresolved, and how your proposal advances that boundary. State the economic, computational and behavioral contributions and the new insight their integration makes possible.
 
 \begin{table}[h]\caption{From laureate foundations to a new interdisciplinary contribution.}
 \begin{tabularx}{\columnwidth}{@{}p{1.6cm}Y@{}}\toprule
-\textbf{Horizon}&\textbf{Milestone and evidence}\\\midrule
-Foundation&[Laureate, defining work, enduring question and retained insight.]\\
-PS1&[Current-era setting, working baseline and meaningful check.]\\
-Next study&[New interdisciplinary explanation or design; a discriminating test.]\\
-Longer term&[Broader validation, benefits and reusable knowledge or tools.]\\
-2056&[Integrated contribution and evidence connecting it to the ambition below.]\\\bottomrule
-\end{tabularx}\end{table}
+\textbf{Horizon} & \textbf{Milestone and evidence}\\
+\midrule
+Foundation & Jean Tirole was awarded the Nobel Prize in 2014 for his analysis on how regulators make rules to make large companies benefit their users \cite{nobel2014}. This indicates that how to make competition benefit the public has been a long-standing and important question.\\
+PS1 & Applications’ competition for users’ attention and time is becoming increasingly intense.\\
+Next study & My proposal advances research on this question. This proposal integrates economics, computer science and behavioral science. It focuses on how regulators’ reward shapes applications’ recommendation algorithms. It also studies human behavior when users face different recommendation algorithms.\\
+Longer term & Hence, it provides a more comprehensive perspective on how to make applications provide healthier algorithms for users.\\
+2056 & In 2056, I hope to be awarded the Nobel Prize for combining computer science, economics and behavioral science to address the problem of how to make applications adopt healthier recommendation algorithms.\\
+\bottomrule\end{tabularx}\end{table}
 
 \noindent\textbf{Expected 2056 Nobel Prize and Turing Award contribution statement.}
-By 2056, I aspire to be recognized for [theory, method or design] addressing [enduring human question] in [the current era's distinctive environment]. Building on [laureates and cited foundations], I will integrate [economics], [computer science] and [behavioral science] to advance [specific boundary]. Progress will be demonstrated by [milestones and evidence], with intellectual merits in [knowledge] and practical impacts for [people and institutions].
+By 2056, I aspire to be recognized for the method addressing the question of how to make applications provide healthy algorithms in the era when applications compete for users’ attention and time. Building on Jean Tirole’s analysis on how regulators make rules to make large companies benefit their users \cite{nobel2014}, I will integrate the method to make applications adopt healthy recommendation algorithms with external reward, the method to distinguish healthy and unhealthy recommendation algorithms and users’ choice facing different recommendation algorithms to advance research on the problem of how to make competitors cooperate and benefit society. Progress will be demonstrated by results of experiments shown in Answer to Q1, Q2 and Q3, with intellectual merits in economics, computer science and behavioral science and practical impacts for netizens.
 
 \subsection*{Open Science Statement}
-\textbf{GitHub:} \GitHubLink\\
-\textbf{Google Colab:} \ColabLink\par
-[Identify available code, data or synthetic inputs, notebook, dependencies, outputs, release/commit and actual reuse terms. Give the shortest reproducible run instruction.]
+GitHub Code repository: {\def\UrlBreaks{\do a\do b\do c\do d\do e\do f\do g\do h\do i\do j\do k\do l\do m\do n\do o\do p\do q\do r\do s\do t\do u\do v\do w\do x\do y\do z\do A\do B\do C\do D\do E\do F\do G\do H\do I\do J\do K\do L\do M\do N\do O\do P\do Q\do R\do S\do T\do U\do V\do W\do X\do Y\do Z\do 0\do 1\do 2\do 3\do 4\do 5\do 6\do 7\do 8\do 9\do /\do -\do _\do .\do ?\do =\do &}\url{https://github.com/yw650/Recommendation-Algorithms}}
 
-\subsection*{Statement of Contribution to the UN's SDGs}
-\textbf{Hugging Face:} \DemoLink\\
-Through an open-access [tool], this project aims to support \textbf{SDG 4---Quality Education}~\cite{sdg4} by helping [audience] learn [concept] through [interaction]. [State access needs, learning instructions and a feasible evaluation.] Distinguish the resource released from benefits that remain to be evaluated.
+Google Colab: {\def\UrlBreaks{\do a\do b\do c\do d\do e\do f\do g\do h\do i\do j\do k\do l\do m\do n\do o\do p\do q\do r\do s\do t\do u\do v\do w\do x\do y\do z\do A\do B\do C\do D\do E\do F\do G\do H\do I\do J\do K\do L\do M\do N\do O\do P\do Q\do R\do S\do T\do U\do V\do W\do X\do Y\do Z\do 0\do 1\do 2\do 3\do 4\do 5\do 6\do 7\do 8\do 9\do /\do -\do _\do .\do ?\do =\do &}\url{https://colab.research.google.com/drive/1mYoomco3ywsZb8PaX2oh-wjGZkXDkRil?usp=sharing}}
+
+Submitted code commit: {\def\UrlBreaks{\do a\do b\do c\do d\do e\do f\do g\do h\do i\do j\do k\do l\do m\do n\do o\do p\do q\do r\do s\do t\do u\do v\do w\do x\do y\do z\do A\do B\do C\do D\do E\do F\do G\do H\do I\do J\do K\do L\do M\do N\do O\do P\do Q\do R\do S\do T\do U\do V\do W\do X\do Y\do Z\do 0\do 1\do 2\do 3\do 4\do 5\do 6\do 7\do 8\do 9\do /\do -\do _\do .\do ?\do =\do &}\nolinkurl{7720aa975f87b6512bfc5d2852f3b4ee5179e1c3}}
+
+Paper source: {\def\UrlBreaks{\do a\do b\do c\do d\do e\do f\do g\do h\do i\do j\do k\do l\do m\do n\do o\do p\do q\do r\do s\do t\do u\do v\do w\do x\do y\do z\do A\do B\do C\do D\do E\do F\do G\do H\do I\do J\do K\do L\do M\do N\do O\do P\do Q\do R\do S\do T\do U\do V\do W\do X\do Y\do Z\do 0\do 1\do 2\do 3\do 4\do 5\do 6\do 7\do 8\do 9\do /\do -\do _\do .\do ?\do =\do &}\url{https://github.com/yw650/PS1-Yongzhuo}}
+
+An IPYNB file is included in the GitHub repository. Open and run it.
+
+\subsection*{Statement of Contribution to the UN’s SDGs}
+Hugging Face: {\def\UrlBreaks{\do a\do b\do c\do d\do e\do f\do g\do h\do i\do j\do k\do l\do m\do n\do o\do p\do q\do r\do s\do t\do u\do v\do w\do x\do y\do z\do A\do B\do C\do D\do E\do F\do G\do H\do I\do J\do K\do L\do M\do N\do O\do P\do Q\do R\do S\do T\do U\do V\do W\do X\do Y\do Z\do 0\do 1\do 2\do 3\do 4\do 5\do 6\do 7\do 8\do 9\do /\do -\do _\do .\do ?\do =\do &}\url{https://huggingface.co/spaces/dku-comsci-econ206-2026/Recommendation_Algorithms}}
+
+Through an open-access online interactive game, this project aims to support SDG 4—Quality Education by helping learners learn how external reward from regulators would shape different applications’ recommendation algorithms through interacting with the online game. Interact with this online game and monitor the changes.
 
 \subsection*{Submission milestones}
-First draft: September 13, 2026, 11:00 P.M. Beijing time (UTC+8). Class review: September 14. Proposed: rebuttal September 16 and revised submission September 20, both at 11:00 P.M. Update Appendix~\ref{app:abstract} with each reflection and revision.
-
+First draft: September 13, 2026, 11:00 P.M. Beijing time (UTC+8). Class review: September 14. Proposed: rebuttal September 16 and revised submission September 20, both at 11:00 P.M.
